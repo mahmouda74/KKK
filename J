@@ -1,0 +1,75 @@
+let currentLang = 'en';
+
+function toggleLanguage() {
+    currentLang = currentLang === 'en' ? 'ar' : 'en';
+    document.body.setAttribute('lang', currentLang);
+    document.querySelectorAll('[lang]').forEach(el => {
+        el.style.display = el.lang === currentLang ? 'block' : 'none';
+    });
+}
+
+function showStartModal() {
+    document.getElementById('startModal').style.display = 'block';
+}
+
+function proceedToLogin() {
+    const accountType = document.getElementById('accountType').value;
+    closeModal('startModal');
+    showLoginModal(accountType);
+}
+
+function showLoginModal(userType) {
+    const modal = document.getElementById('loginModal');
+    const titleEn = document.getElementById('loginTitle');
+    const titleAr = document.getElementById('loginTitleAr');
+    modal.style.display = 'block';
+
+    const titles = {
+        en: {
+            marketer: 'Marketer Login',
+            merchant: 'Merchant Login',
+            shipping: 'Shipping Company Login'
+        },
+        ar: {
+            marketer: 'تسجيل دخول المسوق',
+            merchant: 'تسجيل دخول التاجر',
+            shipping: 'تسجيل دخول شركة الشحن'
+        }
+    };
+
+    titleEn.textContent = titles.en[userType];
+    titleAr.textContent = titles.ar[userType];
+
+    document.getElementById('loginForm').onsubmit = function (e) {
+        e.preventDefault();
+        let redirectUrl;
+        switch (userType) {
+            case 'marketer':
+                redirectUrl = 'https://forms.gle/DZ1A9QgDovxcdzm67';
+                break;
+            case 'merchant':
+                redirectUrl = 'https://forms.gle/MTerdnHf5PdwHaCR7';
+                break;
+            case 'shipping':
+                redirectUrl = 'https://kazamall.com/shipping/dashboard';
+                break;
+            default:
+                redirectUrl = 'https://kazamall.com/dashboard';
+        }
+        window.location.href = redirectUrl;
+    };
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+// Close the modal if the user clicks outside of it
+window.onclick = function(event) {
+    if (event.target.className === 'modal') {
+        event.target.style.display = 'none';
+    }
+}
+
+// Initialize language
+toggleLanguage();
