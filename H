@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KazaMall - منصة التجارة الإلكترونية الشاملة</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- محتويات الصفحة هنا مثل الهيدر، التنقل، البانر، الميزات، والفوتر -->
+    <script src="script.js"></script>
+</body>
+</html>
