@@ -1,0 +1,21 @@
+:root {
+    --global-palette1: #0070bb;
+    --global-palette2: #f9be09;
+    --global-palette3: #222222;
+    --global-palette4: #3b3b3b;
+    --global-palette5: #515151;
+    --global-palette6: #626262;
+    --global-palette7: #e1e1e1;
+    --global-palette8: #f7f7f7;
+    --global-palette9: #ffffff;
+}
+
+body {
+    font-family: 'Almarai', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--global-palette9);
+    color: var(--global-palette3);
+}
+
+/* بقية أنماط CSS هنا */
